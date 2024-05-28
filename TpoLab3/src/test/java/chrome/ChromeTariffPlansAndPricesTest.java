@@ -16,8 +16,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ChromeTariffPlansAndPricesTest {
     private RemoteWebDriver driver;
-    private Map<String, Object> vars;
-    JavascriptExecutor js;
 
     @BeforeEach
     public void setUp() {
