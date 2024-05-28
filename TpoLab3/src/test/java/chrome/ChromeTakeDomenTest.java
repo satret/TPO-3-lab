@@ -27,7 +27,7 @@ public class ChromeTakeDomenTest {
 
     @Test
     public void searchTrains() throws InterruptedException {
-        driver.get("https://wordpress.com/ru");
+        driver.get("https://wordpress.com/ru");//
         driver.manage().window().setSize(new Dimension(1163, 1032));
         driver.findElement(By.xpath("//*[@id=\"wpcom-home\"]/div[1]/div[3]/div/div[2]/div[3]/div/a")).click();
         driver.findElement(By.xpath("//*[@id=\"primary\"]/div/div[2]/div/div/div/div[3]/div[1]/div/div/div/button[4]")).click();
