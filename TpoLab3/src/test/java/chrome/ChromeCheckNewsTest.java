@@ -3,18 +3,15 @@ package chrome;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.time.Duration;
-import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class ChromeTariffPlansAndPricesTest {
+public class ChromeCheckNewsTest {
     private RemoteWebDriver driver;
 
     @BeforeEach
@@ -29,13 +26,13 @@ public class ChromeTariffPlansAndPricesTest {
     }
 
     @Test
-    public void searchTariffPlans() {
-        driver.get("https://wordpress.com/ru/");
-        driver.manage().window().setSize(new Dimension(948, 1032));
-        //
-        driver.findElement(By.xpath("/html/body/div[1]/nav/ul[1]/li[5]/a")).click();
+    public void searchNews() throws InterruptedException {
+        driver.get("https://wordpress.com/ru");//
+        driver.manage().window().setSize(new Dimension(1163, 1032));
+        driver.findElement(By.xpath("/html/body/div[1]/nav/ul[1]/li[4]/button")).click();
+        driver.findElement(By.xpath("/html/body/div[1]/div[1]/div[6]/ul/li[2]/a")).click();
         String currentUrl = driver.getCurrentUrl();
-        assertEquals(currentUrl, "https://wordpress.com/ru/pricing/");
+        System.out.println(currentUrl);
+        assertEquals(currentUrl, "https://wordpress.com/blog/");
     }
-
 }
